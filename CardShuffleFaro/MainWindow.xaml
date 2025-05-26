@@ -1,0 +1,22 @@
+﻿<Window x:Class="CardShuffleApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Карточная тасовка" Height="450" Width="600">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="160"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" VerticalAlignment="Top" >
+            <Button Content="Перемешать" Margin="5" Height="30" Click="ShuffleButton_Click"/>
+            <Button Content="Сбросить" Margin="5" Height="30" Click="ResetButton_Click"/>
+            <Button Content="Отсортировать" Margin="5" Height="30" Click="SortButton_Click"/>
+
+            <TextBox x:Name="SearchTextBox" Margin="5,20,5,5" Height="25"
+                     TextChanged="SearchTextBox_TextChanged"/>
+        </StackPanel>
+
+        <ListBox x:Name="CardsListBox" Grid.Column="1" Margin="10,0,0,0" DisplayMemberPath="Name"/>
+    </Grid>
+</Window>
